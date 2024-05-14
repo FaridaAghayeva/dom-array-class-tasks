@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- task1 -->
+    <p id="demo"></p>
+    <!-- task3 -->
+    <img id="myImage" src="" />
+    <!-- task4 -->
+    <p id="myElement"></p>
+    <!-- task5 -->
+    <button type="submit" id="btn">Click me</button>
+    <!-- task6 -->
+    <div id="container"></div>
+    <!-- task9 -->
+    <form id="myForm">
+      <input type="text" id="email2" F />
+      <span id="emailError" style="color: red; display: none"
+        >Invalid email address</span
+      >
+      <button type="submit">Submit</button>
+    </form>
+    <!-- task10 -->
+    <form id="myForm2">
+      <input type="password" id="password" />
+      <input type="password" id="confirmPassword" />
+      <span id="passwordError" style="color: red; display: none"></span>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- task11 -->
+    <form id="myForm">
+      <textarea id="message" maxlength="100"></textarea>
+      <div id="charCount">Characters remaining: 100</div>
+      <button type="submit">Submit</button>
+    </form>
+    <script src="script.js">
+      const messageInput = document.getElementById("message");
+      const charCount = document.getElementById("charCount");
+      messageInput.addEventListener("input", function () {
+        const remainingChars = 100 - this.value.length;
+        charCount.textContent = `Characters remaining: ${remainingChars}'`;
+        if (remainingChars < 0) {
+          this.value = this.value.slice(0, 100);
+          charCount.textContent = "Characters remaining: 0";
+        }
+      });
+    </script>
+  </body>
+</html>
